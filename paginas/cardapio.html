@@ -45,6 +45,8 @@
 
 
 
+
+
   <br>
   <h1 class="fw-normal text-center">Nossos Produtos</h1>
   <br>
@@ -61,8 +63,11 @@
           <p class="card-text">Possui cerca de 25 cm de Diametro, e sabores limitados</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">R$ : 39,90</li>
-          <button type="button" class="btn btn-danger" onclick="openPopup()">Peça Agora!</button>
+          <li class="list-group-item" id="valorItem">R$ : 39,90</li>
+
+          <input type="number"  id="quantidadePizzaPequena" min="0" value="0" >
+
+          
 
 
 
@@ -77,47 +82,50 @@
 
                 <div class="enderecoCep ">
                   <label>CEP</label>
-                  <input type="text" onblur="buscaCEP()" name="cep">
+                  <input type="text" class="form-control" onblur="buscaCEP()" name="cep" placeholder="Informe seu CEP">
                 </div>
 
 
                 <div class="enderecoCep">
                   <label>Rua</label>
-                  <input type="text" name="rua">
+                  <input type="text" class="form-control" name="rua" placeholder="Informe sua Rua">
                 </div>
 
                 <div class="enderecoCep">
                   <label>Bairro</label>
-                  <input type="text" name="bairro">
+                  <input type="text" name="bairro" class="form-control" placeholder="Informe seu Bairro">
                 </div>
 
                 <div class="enderecoCep mb-3">
-                  <label for="nome" class="form-label">Cidade</label>
-                  <input type="text" name="cidade">
+                  <label >Cidade</label>
+                  <input type="text" name="cidade" class="form-control" placeholder="Informe sua Cidade">
                 </div>
 
                 <div class="enderecoCep">
                   <label>Estado</label>
-                  <input type="text" name="estado">
+                  <input type="text" name="estado" class="form-control" placeholder="Informe seu Estado">
                 </div>
 
 
-
                 <div class="mb-3">
-                  <label for="pizzaFavorita" class="form-label">Pizza Favorita</label>
-                  <select class="form-select" id="pizzaFavorita">
-                    <option value="">Selecione sua pizza favorita</option>
-                    <option value="margherita">Margherita</option>
-                    <option value="pepperoni">Pepperoni</option>
-                    <option value="calabresa">Calabresa</option>
-                    <option value="quatroQueijos">Quatro Queijos</option>
+                  <label for="forma-pagamento" class="form-label">Selecione a Forma de Pagamento</label>
+                  <select class="form-select" id="forma-pagamento" aria-placeholder="informe o tipo de pagamento">
+            
+                      <option value="margherita">Dinheiro</option>
+                      <option value="pepperoni">Debito</option>
+                      <option value="calabresa">Credito</option>
+                      <option value="quatroQueijos">Pix</option>
                   </select>
-                </div>
+                  </div>
 
+                  <div class="mb-3">
+                    <label>Valor Total</label>
+                    <p class="h1" id="valorTotal"> </p>
+                  </div>
 
 
                 <div class="mb-3">
-                  <label for="pergunta" class="form-label">Pergunta Adicional</label>
+                  <label for="pergunta" class="form-label">Informação Adicional</label>
                   <textarea class="form-control" id="pergunta" rows="3"
                     placeholder="Digite sua pergunta adicional"></textarea>
                 </div>
@@ -128,7 +136,7 @@
               </form>
             </div>
 
-            <button onclick="closePopup()">Fechar</button>
+          <button class="btn btn-danger " onclick="closePopup()">Cancelar</button>
           </div>
 
         </ul>
@@ -141,12 +149,13 @@
       <div class="card" style="width: 30em;">
         <img src="https://images.alphacoders.com/105/thumb-1920-1050377.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Pizza Pequena</h5>
-          <p class="card-text">Possui cerca de 25 cm de Diametro, e sabores limitados</p>
+          <h5 class="card-title">Pizza Media</h5>
+          <p class="card-text">Possui cerca de 35 cm de Diametro, e sabores limitados</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">R$ : 39,90</li>
-          <button type="button" class="btn btn-danger" onclick="openPopup()">Peça Agora!</button>
+          <li class="list-group-item">R$ : 55,20</li>
+          <input type="number"  id="quantidadePizzaMedia" min="0" value="0" >
+        
 
           <div id="myPopup">
             <p>Conteúdo da janela pop-up. Isso pode incluir formulários, texto, imagens, etc.</p>
@@ -166,12 +175,13 @@
       <div class="card" style="width: 30em;">
         <img src="https://images.alphacoders.com/105/thumb-1920-1050377.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Pizza Pequena</h5>
-          <p class="card-text">Possui cerca de 25 cm de Diametro, e sabores limitados</p>
+          <h5 class="card-title">Pizza Grande</h5>
+          <p class="card-text">Possui cerca de 45 cm de Diametro, e sabores limitados</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">R$ : 39,90</li>
-          <button type="button" class="btn btn-danger" onclick="openPopup()">Peça Agora!</button>
+          <li class="list-group-item">R$ : 75,90</li>
+          <input type="number"  id="quantidadePizzaGrande" min="0" value="0" >
+
 
           <div id="myPopup">
             <p>Conteúdo da janela pop-up. Isso pode incluir formulários, texto, imagens, etc.</p>
@@ -183,6 +193,11 @@
     </div>
 
   </div>
+
+  <br>
+  <br>
+  
+  <button type="button" class="btn btn-danger center" onclick="openPopup(),valorTotal()" >Peça Agora!</button>
 
 
 

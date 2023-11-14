@@ -31,3 +31,12 @@ function openPopup() {
     .then(preencherEndereco);
 
   }
+  
+
+function valorTotal(){
+  var pizzaPequena = parseFloat(document.getElementById('quantidadePizzaPequena').value)* 39.9;
+  var pizzaMedia = parseFloat(document.getElementById('quantidadePizzaMedia').value)* 55.2;
+  var pizzaGrande = parseFloat(document.getElementById('quantidadePizzaGrande').value)* 75.9;
+ 
+  var valor = document.getElementById('valorTotal').textContent = pizzaPequena + pizzaMedia + pizzaGrande;
+}
